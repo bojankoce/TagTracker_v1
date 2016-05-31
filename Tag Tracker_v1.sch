@@ -10789,7 +10789,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="GND15" library="supply1" deviceset="GND" device=""/>
 <part name="GND12" library="supply1" deviceset="GND" device=""/>
 <part name="U11" library="myLibraries" deviceset="MCP73831" device=""/>
-<part name="R10" library="SparkFun-Resistors" deviceset="RESISTOR" device="0603-RES"/>
+<part name="R10" library="SparkFun-Resistors" deviceset="RESISTOR" device="0603-RES" value="2K"/>
 <part name="R4" library="SparkFun-Resistors" deviceset="RESISTOR" device="0603-RES" value="470R"/>
 <part name="D1" library="led" deviceset="LED" device="SML0603" value="RED (charging)"/>
 <part name="GND7" library="supply1" deviceset="GND" device=""/>
@@ -10821,8 +10821,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="R2" library="SparkFun-Resistors" deviceset="RESISTOR" device="0603-RES" value="10K"/>
 <part name="U1" library="SparkFun-DigitalIC" deviceset="ATMEGA328P_TQFP" device="" value="ATMEGA328P_TQFP"/>
 <part name="C6" library="SparkFun-Capacitors" deviceset="CAP" device="1206" value="100uF/6.3V"/>
-<part name="C14" library="SparkFun-Capacitors" deviceset="CAP" device="0805" value="100nF"/>
-<part name="C15" library="SparkFun-Capacitors" deviceset="CAP" device="0805" value="33pF"/>
 <part name="FRAME1" library="frames" deviceset="A3L-LOC" device=""/>
 <part name="D3" library="led" deviceset="LED" device="SML0603" value="GREEN (charged)"/>
 <part name="MICRO_USB" library="SparkFun-Connectors" deviceset="USB-AB" device="CONN-11794" value="Micro USB"/>
@@ -10895,6 +10893,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="GND8" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="JP2" library="Various_parts" deviceset="TC2030-NL" device=""/>
 <part name="U10" library="myLibraries" deviceset="NANOSIM" device=""/>
+<part name="C15" library="SparkFun-Capacitors" deviceset="CAP" device="0603-CAP" value="33pF"/>
+<part name="C14" library="SparkFun-Capacitors" deviceset="CAP" device="0603-CAP" value="100nF"/>
 </parts>
 <sheets>
 <sheet>
@@ -11039,11 +11039,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="NAME" x="-89.916" y="-32.639" size="1.778" layer="95"/>
 <attribute name="VALUE" x="-94.361" y="-39.116" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="C14" gate="G$1" x="-81.28" y="-35.56" smashed="yes">
-<attribute name="NAME" x="-79.756" y="-32.639" size="1.778" layer="95"/>
-<attribute name="VALUE" x="-79.756" y="-37.719" size="1.778" layer="96"/>
-</instance>
-<instance part="C15" gate="G$1" x="-68.58" y="-35.56"/>
 <instance part="FRAME1" gate="G$1" x="-233.68" y="-147.32"/>
 <instance part="D3" gate="G$1" x="-185.42" y="60.96" smashed="yes">
 <attribute name="NAME" x="-183.896" y="59.944" size="1.778" layer="95"/>
@@ -11145,6 +11140,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="NAME" x="-21.082" y="-42.418" size="2.54" layer="95" rot="MR0"/>
 <attribute name="VALUE" x="-20.32" y="-60.96" size="1.27" layer="96" rot="MR0"/>
 </instance>
+<instance part="C15" gate="G$1" x="-68.58" y="-33.938"/>
+<instance part="C14" gate="G$1" x="-81.28" y="-33.938"/>
 </instances>
 <busses>
 </busses>
@@ -11243,13 +11240,17 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="C6" gate="G$1" pin="2"/>
 <wire x1="-91.44" y1="-38.1" x2="-91.44" y2="-40.64" width="0.1524" layer="91"/>
 <wire x1="-91.44" y1="-40.64" x2="-81.28" y2="-40.64" width="0.1524" layer="91"/>
-<pinref part="C15" gate="G$1" pin="2"/>
 <wire x1="-81.28" y1="-40.64" x2="-68.58" y2="-40.64" width="0.1524" layer="91"/>
-<wire x1="-68.58" y1="-40.64" x2="-68.58" y2="-38.1" width="0.1524" layer="91"/>
-<pinref part="C14" gate="G$1" pin="2"/>
-<wire x1="-81.28" y1="-38.1" x2="-81.28" y2="-40.64" width="0.1524" layer="91"/>
+<wire x1="-68.58" y1="-40.64" x2="-68.58" y2="-36.478" width="0.1524" layer="91"/>
+<wire x1="-68.58" y1="-36.478" x2="-68.58" y2="-38.1" width="0.1524" layer="91"/>
+<wire x1="-81.28" y1="-38.1" x2="-81.28" y2="-36.478" width="0.1524" layer="91"/>
 <pinref part="GND13" gate="1" pin="GND"/>
 <junction x="-81.28" y="-40.64"/>
+<pinref part="C15" gate="G$1" pin="2"/>
+<junction x="-68.58" y="-36.478"/>
+<pinref part="C14" gate="G$1" pin="2"/>
+<wire x1="-81.28" y1="-36.478" x2="-81.28" y2="-40.64" width="0.1524" layer="91"/>
+<junction x="-81.28" y="-36.478"/>
 </segment>
 <segment>
 <pinref part="Q1" gate="G$1" pin="E"/>
@@ -12173,14 +12174,18 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <segment>
 <pinref part="C6" gate="G$1" pin="1"/>
 <wire x1="-91.44" y1="-30.48" x2="-91.44" y2="-25.4" width="0.1524" layer="91"/>
-<pinref part="C15" gate="G$1" pin="1"/>
 <wire x1="-91.44" y1="-25.4" x2="-81.28" y2="-25.4" width="0.1524" layer="91"/>
 <wire x1="-81.28" y1="-25.4" x2="-68.58" y2="-25.4" width="0.1524" layer="91"/>
-<wire x1="-68.58" y1="-25.4" x2="-68.58" y2="-30.48" width="0.1524" layer="91"/>
-<pinref part="C14" gate="G$1" pin="1"/>
-<wire x1="-81.28" y1="-30.48" x2="-81.28" y2="-25.4" width="0.1524" layer="91"/>
+<wire x1="-68.58" y1="-25.4" x2="-68.58" y2="-28.858" width="0.1524" layer="91"/>
+<wire x1="-68.58" y1="-28.858" x2="-68.58" y2="-30.48" width="0.1524" layer="91"/>
+<wire x1="-81.28" y1="-30.48" x2="-81.28" y2="-28.858" width="0.1524" layer="91"/>
 <junction x="-81.28" y="-25.4"/>
 <label x="-78.74" y="-25.4" size="1.778" layer="95"/>
+<pinref part="C14" gate="G$1" pin="1"/>
+<wire x1="-81.28" y1="-28.858" x2="-81.28" y2="-25.4" width="0.1524" layer="91"/>
+<junction x="-81.28" y="-28.858"/>
+<pinref part="C15" gate="G$1" pin="1"/>
+<junction x="-68.58" y="-28.858"/>
 </segment>
 <segment>
 <pinref part="R15" gate="G$1" pin="1"/>
